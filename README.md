@@ -18,15 +18,16 @@ The following **optional** features are implemented:
 - [X] Show the username and creation time for each post (Shows username)
 - [ ] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse.
 - [ ] User Profiles:
-   - [ ] Allow the logged in user to add a profile photo
-   - [ ] Display the profile photo with each post
-   - [ ] Tapping on a post's username or profile photo goes to that user's profile page
+- [ ] Allow the logged in user to add a profile photo
+- [ ] Display the profile photo with each post
+- [ ] Tapping on a post's username or profile photo goes to that user's profile page
 
 The following **additional** features are implemented:
 
 - [X] User is notified when they're post is complete with a popup checkmark.
 - [X] User can favorite/de-favorite a post, and 'like' count is incremented/decremented.
 - [X] User can start over in the middle of a post to re-select an image.
+- [X] User can pull to refresh once a post is made to view the new insta post.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
@@ -37,7 +38,10 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/mliaQiM.gifv' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+Content length of gif exceeded the limit but here's the link to the imgur gif!! Check it out! :)
+
+http://i.imgur.com/mliaQiM.gifv
+
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
