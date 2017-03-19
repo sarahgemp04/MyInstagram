@@ -43,7 +43,7 @@ class InstaCell: UITableViewCell {
             //handleLabel.text = post.author
             
             print(instaImageView.file)
-            likesLabel.text = "\(post.likes)"
+            likesLabel.text = "\(post.likes) likes"
             if (post.isFavorited) {
                 likeImageView.image = #imageLiteral(resourceName: "favor-icon-red")
             } else {
@@ -62,12 +62,12 @@ class InstaCell: UITableViewCell {
             likeImageView.image = #imageLiteral(resourceName: "favor-icon")
             post?.likes = post!.likes - 1
             post?.isFavorited = false
-            self.likesLabel.text = "\(self.post!.likes)"
+            self.likesLabel.text = "\(self.post!.likes) likes"
 
         } else {
             post?.likes = post!.likes + 1
             post?.isFavorited = true
-            self.likesLabel.text = "\(self.post!.likes)"
+            self.likesLabel.text = "\(self.post!.likes) likes"
             likeImageView.image = #imageLiteral(resourceName: "favor-icon-red")
         }
     }

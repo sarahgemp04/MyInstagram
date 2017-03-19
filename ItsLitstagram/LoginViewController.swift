@@ -76,11 +76,13 @@ class LoginViewController: UIViewController {
         print(grad2)
 
         view.layer.addSublayer(grad2)
-        
-        //startAnimation(index: 0)
+               //startAnimation(index: 0)
         
     }
 
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue){
+    }
+    
     /*func startAnimation(index: Int) {
         
         UIView.animate(withDuration: 100000, delay: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
@@ -142,6 +144,17 @@ class LoginViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func editingBeganUserName(_ sender: AnyObject) {
+        self.userNameField.textColor = UIColor.init(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.8)
+        self.userNameField.text = ""
+    }
+    
+    @IBAction func editingBeganPassword(_ sender: AnyObject) {
+        self.passwordField.textColor = UIColor.init(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.8)
+        self.passwordField.text = ""
+    }
+    
     
    
     override func didReceiveMemoryWarning() {

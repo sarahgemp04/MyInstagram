@@ -13,11 +13,14 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     var posts: [PFObject]?
+    var refreshControl: UIRefreshControl!
+
     
     static var currentUser: PFUser? = PFUser.current()
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var logoutButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +28,35 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         /* Setup Tableview */
         tableView.delegate = self
         tableView.dataSource = self
+         self.navigationController?.navigationBar.tintColor = UIColor.init(red:0.91 , green: 0.59 , blue: 0, alpha: 0.9)
+        self.tabBarController?.navigationItem.rightBarButtonItem = logoutButton
         self.tabBarController?.navigationItem.setHidesBackButton(true, animated: false)
-        self.navigationController?.navigationBar.tintColor = UIColor.init(red:0.91 , green: 0.59 , blue: 0.93, alpha: 0.9)
+        
+        
+        /* Setup Refresh Control */
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
         
         /* Call method to load in posts*/
         setupPosts()
         
     }
    
+    //On refresh for refresh Control.
+    func onRefresh() {
+        
+        self.setupPosts()
+        
+    }
+    
+    // Implement the delay method
+    func run(after wait: TimeInterval, closure: @escaping () -> Void) {
+        let queue = DispatchQueue.main
+        queue.asyncAfter(deadline: DispatchTime.now() + wait, execute: closure)
+    }
+    
+    
     func setupPosts() {
         
         ParseClient.sharedInstance.findObjectsInBackground { (posts: [PFObject]?,
@@ -43,6 +67,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.posts = posts
                 print("Inside setup \(self.posts)")
                 self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
                
             } else {
                 print(error?.localizedDescription)
@@ -99,10 +124,9 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         PFUser.logOutInBackground { (error: Error?) in
             //Logout -> set PFCurrentUser to nil
         }
-        //Send user back to login screen once logged out.
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "loginViewController")
-        self.present(vc, animated: true, completion: nil)
+       
+        self.performSegue(withIdentifier: "unwindToLogin", sender: self)
+
         
     }
 
