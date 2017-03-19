@@ -41,9 +41,9 @@ class LoginViewController: UIViewController {
         userNameField.layer.zPosition = 100
         litstaLabel.layer.zPosition = 100
         
-        
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        
+        self.navigationController?.navigationBar.tintColor = UIColor.init(white: 1, alpha: 0)
+        self.tabBarController?.navigationItem.leftBarButtonItem = nil
+        self.tabBarController?.tabBar.alpha = 0
         
         //Cool animated background color
         gradient = CAGradientLayer()
@@ -80,8 +80,7 @@ class LoginViewController: UIViewController {
         
     }
 
-    @IBAction func prepareForUnwind(segue: UIStoryboardSegue){
-    }
+    
     
     /*func startAnimation(index: Int) {
         

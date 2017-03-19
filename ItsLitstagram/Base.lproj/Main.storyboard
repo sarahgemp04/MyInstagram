@@ -201,6 +201,7 @@
                         <outlet property="logoutButton" destination="48E-Fi-rco" id="Hon-SD-hAE"/>
                         <outlet property="tableView" destination="YIk-sB-HPi" id="Wcz-7d-gQK"/>
                         <segue destination="M4X-qb-q35" kind="unwind" identifier="unwindToLogin" unwindAction="prepareForUnwind:" id="yMB-n2-yy2"/>
+                        <segue destination="BYZ-38-t0r" kind="push" identifier="toLogin" id="AY9-PG-rR4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpJ-pj-oKL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -449,6 +450,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hMj-qy-qva"/>
+        <segue reference="AY9-PG-rR4"/>
     </inferredMetricsTieBreakers>
 </document>

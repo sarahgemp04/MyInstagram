@@ -40,9 +40,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         checkImageView.image = #imageLiteral(resourceName: "checked-symbol")
         checkImageView.isHidden = true
         self.view.backgroundColor = UIColor.white
-        self.tabBarController?.navigationItem.hidesBackButton = true
-        self.tabBarController?.navigationItem.setHidesBackButton(true, animated: false)
-
+        self.tabBarController?.navigationItem.leftBarButtonItem?.tintColor = UIColor.init(white: 1, alpha: 0)
         
         image = nil
         

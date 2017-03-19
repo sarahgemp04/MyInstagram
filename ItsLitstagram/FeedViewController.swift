@@ -30,7 +30,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
          self.navigationController?.navigationBar.tintColor = UIColor.init(red:0.91 , green: 0.59 , blue: 0, alpha: 0.9)
         self.tabBarController?.navigationItem.rightBarButtonItem = logoutButton
-        self.tabBarController?.navigationItem.setHidesBackButton(true, animated: false)
+        self.tabBarController?.navigationItem.leftBarButtonItem?.tintColor = UIColor.init(white: 1, alpha: 0)
+
         
         
         /* Setup Refresh Control */
@@ -124,8 +125,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         PFUser.logOutInBackground { (error: Error?) in
             //Logout -> set PFCurrentUser to nil
         }
+        performSegue(withIdentifier: "toLogin", sender: self)
        
-        self.performSegue(withIdentifier: "unwindToLogin", sender: self)
 
         
     }
