@@ -7,15 +7,43 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var tabBarController: UITabBarController = UITabBarController()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Initialize Parse
+        // Set applicationId and server based on the values in the Heroku settings.
+        // clientKey is not used on Parse open source unless explicitly configured
+        Parse.initialize(
+            with: ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
+                configuration.applicationId = "ItsLitstagram"
+                configuration.clientKey = "hr3cnu892coqhsujhsuia3u2"  // set to nil assuming you have not set clientKey
+                configuration.server = "https://afternoon-basin-18901.herokuapp.com/parse"
+            })
+        )
+                
+        if (PFUser.current()
+            != nil) {
+            print(PFUser.current())
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let tvc = storyboard.instantiateViewController(withIdentifier: "TabBarController")
+
+            // Make the Tab Bar Controller the root view controller
+            window?.rootViewController = tvc
+            window?.makeKeyAndVisible()
+            print("Root view is:  \(window?.rootViewController)")
+        }
+        
         return true
     }
 

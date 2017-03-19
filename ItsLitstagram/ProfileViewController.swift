@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ProfileViewController: UIViewController {
 
@@ -16,6 +17,16 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func onLogout(_ sender: AnyObject) {
+        
+        PFUser.logOutInBackground { (error: Error?) in
+            // PFUser.currentUser() will now be nil
+        }
+       
+        performSegue(withIdentifier: "logoutSegue", sender: self)
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

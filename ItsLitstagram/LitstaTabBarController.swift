@@ -12,7 +12,12 @@ class LitstaTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.tabBar.items![0].title = "Home"
+        self.tabBar.items![0].image = #imageLiteral(resourceName: "home-icon")
+        self.tabBar.items![0].title = "Profile"
+        self.tabBar.items![0].image = #imageLiteral(resourceName: "profile-icon")        
+        
         // Do any additional setup after loading the view.
     }
 

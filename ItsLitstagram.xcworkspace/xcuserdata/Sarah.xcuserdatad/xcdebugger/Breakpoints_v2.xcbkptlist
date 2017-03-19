@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ItsLitstagram/FeedViewController.swift"
+            timestampString = "511609578.02484"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ItsLitstagram/FeedViewController.swift"
+            timestampString = "511609578.02484"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ItsLitstagram/PostObject.swift"
+            timestampString = "511607536.510185"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "init(media:caption:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ItsLitstagram.PostObject.init (media : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.PFFile&gt;, caption : Swift.Optional&lt;Swift.String&gt;) -&gt; ItsLitstagram.PostObject"
+                  moduleName = "ItsLitstagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sarah/Documents/iOSCodepath/ItsLitstagram/ItsLitstagram/PostObject.swift"
+                  timestampString = "511610529.594358"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "102">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ItsLitstagram.PostObject.__allocating_init (media : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.PFFile&gt;, caption : Swift.Optional&lt;Swift.String&gt;) -&gt; ItsLitstagram.PostObject"
+                  moduleName = "ItsLitstagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sarah/Documents/iOSCodepath/ItsLitstagram/ItsLitstagram/PostObject.swift"
+                  timestampString = "511610529.597969"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
