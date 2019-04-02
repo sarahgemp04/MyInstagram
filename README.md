@@ -40,7 +40,9 @@ Here's a walkthrough of implemented user stories:
 
 Content length of gif exceeded the limit but here's the link to the imgur gif!! Check it out! :)
 
-http://i.imgur.com/mliaQiM.gifv
+
+http://i.imgur.com/mliaQiM.gif
+
 
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
