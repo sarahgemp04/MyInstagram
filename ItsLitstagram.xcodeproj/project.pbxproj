@@ -23,8 +23,6 @@
 		26D3272A1E74B67B00AD93B2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D327291E74B67B00AD93B2 /* User.swift */; };
 		26D3272C1E74C5D500AD93B2 /* InstaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D3272B1E74C5D500AD93B2 /* InstaCell.swift */; };
 		26EB27451E74A4D10035E4B2 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EB27441E74A4D10035E4B2 /* FeedViewController.swift */; };
-		26EB27471E74A5930035E4B2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EB27461E74A5930035E4B2 /* ProfileViewController.swift */; };
-		26F5A4581E77AAB00071265A /* LitstaTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5A4571E77AAB00071265A /* LitstaTabBarController.swift */; };
 		26F5A45A1E77BA080071265A /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5A4591E77BA080071265A /* PostViewController.swift */; };
 		26F74D511E7C463800E490E0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F74D501E7C463800E490E0 /* TabBarViewController.swift */; };
 		892E223C761E3B22B9FF0E9F /* Pods_ItsLitstagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D8A888EDAFDF737B60BD72 /* Pods_ItsLitstagramTests.framework */; };
@@ -71,8 +69,6 @@
 		26D327291E74B67B00AD93B2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		26D3272B1E74C5D500AD93B2 /* InstaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaCell.swift; sourceTree = "<group>"; };
 		26EB27441E74A4D10035E4B2 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		26EB27461E74A5930035E4B2 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		26F5A4571E77AAB00071265A /* LitstaTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LitstaTabBarController.swift; sourceTree = "<group>"; };
 		26F5A4591E77BA080071265A /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		26F74D501E7C463800E490E0 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ../TabBarViewController.swift; sourceTree = "<group>"; };
 		3040347F980C1CB9E665C20C /* Pods-ItsLitstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ItsLitstagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-ItsLitstagram/Pods-ItsLitstagram.release.xcconfig"; sourceTree = "<group>"; };
@@ -190,8 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				26F74D501E7C463800E490E0 /* TabBarViewController.swift */,
-				26F5A4571E77AAB00071265A /* LitstaTabBarController.swift */,
-				26EB27461E74A5930035E4B2 /* ProfileViewController.swift */,
 				26F5A4591E77BA080071265A /* PostViewController.swift */,
 				26EB27441E74A4D10035E4B2 /* FeedViewController.swift */,
 				2641953F1E73C55700D16C95 /* LoginViewController.swift */,
@@ -382,9 +376,20 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ItsLitstagram/Pods-ItsLitstagram-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/ParseUI/ParseUI.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParseUI.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -412,13 +417,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ItsLitstagramUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5DE56DD8513C66801B40E293 /* [CP] Embed Pods Frameworks */ = {
@@ -457,13 +465,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ItsLitstagramTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		91642D0F970E0BB0976C20EA /* [CP] Check Pods Manifest.lock */ = {
@@ -472,13 +483,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ItsLitstagram-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F5996F22D43C5312531F0C7B /* [CP] Embed Pods Frameworks */ = {
@@ -504,8 +518,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				26F5A45A1E77BA080071265A /* PostViewController.swift in Sources */,
-				26EB27471E74A5930035E4B2 /* ProfileViewController.swift in Sources */,
-				26F5A4581E77AAB00071265A /* LitstaTabBarController.swift in Sources */,
 				26D3272C1E74C5D500AD93B2 /* InstaCell.swift in Sources */,
 				26F74D511E7C463800E490E0 /* TabBarViewController.swift in Sources */,
 				264195401E73C55700D16C95 /* LoginViewController.swift in Sources */,

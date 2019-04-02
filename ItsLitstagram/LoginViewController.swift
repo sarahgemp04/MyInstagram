@@ -115,6 +115,10 @@ class LoginViewController: UIViewController {
         }) { (error: Error) in
                 print("error logging in")
                 print(error.localizedDescription)
+            let alert = UIAlertController(title: "Login Error", message: "Incorrect password. Try again.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
         }
         
     }

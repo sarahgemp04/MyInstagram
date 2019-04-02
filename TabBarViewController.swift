@@ -17,8 +17,6 @@ class TabBarViewController: UITabBarController {
         self.tabBar.items![0].image = #imageLiteral(resourceName: "home-icon")
         self.tabBar.items![1].title = "Post"
         self.tabBar.items![1].image = #imageLiteral(resourceName: "image-add-button")
-        self.tabBar.items![2].title = "Profile"
-        self.tabBar.items![2].image = #imageLiteral(resourceName: "profile-icon")
         
        print("Is it cast or not?? \(self.viewControllers![1])")
         

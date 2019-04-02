@@ -88,7 +88,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         print("Inside tableView func \(self.posts)")
         
         if let posts = posts {
-            let post = posts[indexPath.row]
+            let post = posts[(posts.count - 1 - indexPath.row)]
             let newPost: PostObject = PostObject( media: post["media"] as! PFFile, caption: post["caption"] as? String)
             
             newPost.setLikes(likes: post["likesCount"] as! Int)
